@@ -1,0 +1,28 @@
+{
+    "games":[
+        {
+            "id": 1,
+            "gameName": "God of War",
+            "image": "",
+            "rank": 1
+        },
+        {
+            "id": 2,
+            "gameName": "Breath of the Wild",
+            "image": "",
+            "rank": 1
+        },
+        {
+            "id": 3,
+            "gameName": "Spider-Man Into the Universe",
+            "image": "",
+            "rank": 2
+        },
+        {
+            "id": 4,
+            "gameName": "Paper Mario",
+            "image": "",
+            "rank": 5
+        }
+    ]
+}

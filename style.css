@@ -1,4 +1,8 @@
 body {
-    background: blue;
+    background: pink;
   }
-  
+  table, th, td {
+    size-adjust:smaller;
+    border: 1px solid rgb(244, 240, 240);
+    border-collapse: collapse;
+}
