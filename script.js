@@ -5,8 +5,10 @@ document.querySelector("body").appendChild(h2);
 
 document.addEventListener('DOMContentLoaded', fetchGames)
 
-function fetchGames(){
-    fetch('')
+const gameUrl = 'http://localhost:3000/games'
+
+function fetchGames(gameUrl){
+    fetch('https://http.cat/412')
     .then(resp => resp.json())
-    .then(gamesData => renderedGameCard(gamesData))
+    .then(gamesData => renderedGamesCard(gamesData))
 }
