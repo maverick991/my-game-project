@@ -33,11 +33,11 @@
     createZeldaList(data.data)
   }
 
-  start()
+  start() //calling function to load it on page
 
   function createZeldaList(zeldaList){
     document.getElementById("zelda").innerHTML = `
-    <select>
+    <select onchange="loadByCategory(this.value)">
       <option>Hyrule Compendium</option>
       ${Object.keys(zeldaList).map(function(zelda){
         return `<option>${zelda}<option>`
@@ -45,6 +45,20 @@
       </select>
     `
     //join takes the array into one single text instead of the commas and whatnot between the items
-
     //loop through the array through the template literal
+  }
+
+  async function loadByCategory(zelda){
+    if (zelda != "Hyrule Compendium"){
+        const response = await fetch(`https://botw-compendium.herokuapp.com/api/v2/all`)
+        const data = await response.json()
+        //console.log(data)
+        createZeldaInfo(data.data)
+    }
+  }
+
+  function createZeldaInfo(info){
+    //console.log(info)
+    document.getElementById("zelda").innerHTML = `
+    <div id="zelda"></div> <div class="info" ></div>https://botw-compendium.herokuapp.com/api/v2/category/`
   }
