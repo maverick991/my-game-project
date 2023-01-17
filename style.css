@@ -1,8 +1,13 @@
 body {
-    background: pink;
+    background-color: rgb(23, 21, 21);
   }
-  table, th, td {
-    size-adjust:smaller;
-    border: 1px solid rgb(244, 240, 240);
-    border-collapse: collapse;
-}
+  
+  h1 {
+    color: rgb(32, 215, 123);
+    text-align: center;
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 20px;
+  }
