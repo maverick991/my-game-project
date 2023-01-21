@@ -1,33 +1,4 @@
-//const h2 = document.createElement("h2");
-//h2.textContent = "My Completed Games List";
-//document.querySelector("body").appendChild(h2);
-//document.addEventListener('DOMContentLoaded', fetchGames)
-//const gameUrl = 'https://http.cat/200'
-//function fetchGames(gameUrl){
-  //  fetch('https://http.cat/200')
-    //.then(resp => resp.json())
-    //.then(gamesData => renderedGamesCard(gamesData))
-//}
-//https://botw-compendium.herokuapp.com/api/v2/all
-
-//const botwData = 'example'
-
-//fetch('https://botw-compendium.herokuapp.com/api/v2/all', {
-  //method: 'POST', // or 'PUT
-  //headers: {
-    //'Content-Type': 'application/json',
-  //},
- // body: JSON.stringify(botwData),
-//})
- // .then((response) => response.json())
- // .then((botwData) => {
-    //console.log('Success:', botwData);
- // })
-  //.catch((error) => {
-    //console.error('Error:', error);
-  //});
-
-  async function start(){
+    async function start(){
     const response = await fetch("https://botw-compendium.herokuapp.com/api/v2/all") //resolves promise
     const data = await response.json() //javascript obect notoation parsing into reading format
     createZeldaList(data.data)
@@ -49,16 +20,23 @@
   }
 
   async function loadByCategory(zelda){
+    console.log(zelda)
     if (zelda != "Hyrule Compendium"){
         const response = await fetch(`https://botw-compendium.herokuapp.com/api/v2/all`)
+     //use .then()
         const data = await response.json()
-        //console.log(data)
-        createZeldaInfo(data.data)
+        console.log(data.data.materials)
+        createZeldaInfo(data.data[zelda])
     }
   }
 
   function createZeldaInfo(info){
-    //console.log(info)
-    document.getElementById("zelda").innerHTML = `
-    <div id="zelda"></div> <div class="info" ></div>https://botw-compendium.herokuapp.com/api/v2/category/`
+    console.log("info",info)
+    document.getElementById("zelda").innerHTML = info
   }
+
+
+  //Define your problem in English
+//retrieve data from the API
+//click event triggers stuff on the page from the category that is selected
+//print out on the page
