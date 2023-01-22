@@ -29,14 +29,30 @@
         createZeldaInfo(data.data[zelda])
     }
   }
-
+   let zeldaInfo = false;
   function createZeldaInfo(info){
     console.log("info",info)
     document.getElementById("zelda").innerHTML = info
   }
-
+ document.addEventListener("DOMContentLoaded", () => {
+    const addBtn = document.querySelector("Zelda Info");
+    const gameFormContainer = document.querySelector(".container");
+    addBtn.addEventListener("click", () => {
+        zeldaInfo = !zeldaInfo;
+        if (zeldaInfo) {
+            gameFormContainer.style.display = "block";
+        } else {
+            gameFormContainer.style.display = "none";
+        }
+    });
+ })
 
   //Define your problem in English
 //retrieve data from the API
 //click event triggers stuff on the page from the category that is selected
+
+// id="zelda-collection"
+const zeldaCollectionDiv = document.querySelector("#zelda-collection")
+ //console.log(zeldaCollectionDiv)
+//get element by ID
 //print out on the page
